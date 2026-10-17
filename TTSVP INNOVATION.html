@@ -1,0 +1,1053 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TTSVP INNOVATION | Digital Excellence</title>
+
+    <meta name="description"
+          content="TTSVP INNOVATION creates modern websites, mobile applications, games and digital marketing solutions.">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --bg: #08090b;
+            --panel: #111317;
+            --gold: #e4c46b;
+            --white: #f7f7f7;
+            --muted: #a4a7b0;
+            --border: rgba(255,255,255,0.10);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: var(--bg);
+            color: var(--white);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1160px, 88%);
+            margin: auto;
+        }
+
+        /* NAVIGATION */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(8,9,11,0.88);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .navbar {
+            min-height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .logo {
+            color: var(--white);
+            font-size: 21px;
+            font-weight: 800;
+            letter-spacing: -0.7px;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 27px;
+        }
+
+        nav a {
+            color: #c5c6cb;
+            font-size: 13px;
+            transition: color .25s;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        .nav-cta {
+            border: 1px solid rgba(228,196,107,.65);
+            padding: 10px 17px;
+            border-radius: 7px;
+            color: var(--gold);
+        }
+
+        .menu-toggle {
+            display: none;
+            border: 1px solid var(--border);
+            background: var(--panel);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 680px;
+            min-height: min(800px, calc(100vh - 78px));
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(ellipse at 75% 40%,
+                    rgba(228,196,107,.12), transparent 35%),
+                radial-gradient(ellipse at 15% 80%,
+                    rgba(65,75,120,.12), transparent 38%);
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background-image:
+                linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+            background-size: 55px 55px;
+            mask-image: linear-gradient(to bottom, black, transparent);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 850px;
+            padding: 100px 0;
+            animation: fadeUp .9s ease both;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 7px 13px;
+            border: 1px solid rgba(228,196,107,.28);
+            border-radius: 100px;
+            color: var(--gold);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 27px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            background: var(--gold);
+            border-radius: 50%;
+            box-shadow: 0 0 12px var(--gold);
+        }
+
+        .hero h1 {
+            font-size: clamp(43px, 7vw, 83px);
+            line-height: 1.08;
+            letter-spacing: -4px;
+            font-weight: 800;
+            margin-bottom: 25px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(100deg, #fff1bf, #d8b655, #fff7d9);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-description {
+            color: var(--muted);
+            font-size: 16px;
+            max-width: 610px;
+            margin-bottom: 35px;
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 23px;
+            border-radius: 7px;
+            font-size: 13px;
+            font-weight: 700;
+            transition: transform .25s, background .25s, border .25s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: #111;
+        }
+
+        .btn-primary:hover {
+            background: #f4dc91;
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border);
+            color: white;
+            background: rgba(255,255,255,.025);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--gold);
+        }
+
+        .hero-note {
+            color: #777b85;
+            font-size: 11px;
+            margin-top: 45px;
+            letter-spacing: 1.5px;
+        }
+
+        /* SHARED SECTIONS */
+
+        section.content-section {
+            padding: 105px 0;
+        }
+
+        .section-label {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: clamp(30px, 4vw, 48px);
+            line-height: 1.2;
+            letter-spacing: -1.5px;
+            margin-bottom: 17px;
+        }
+
+        .section-description {
+            max-width: 630px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .section-heading {
+            margin-bottom: 43px;
+        }
+
+        /* SERVICES */
+
+        .services-section {
+            background: #0c0d10;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 17px;
+        }
+
+        .service-card {
+            position: relative;
+            overflow: hidden;
+            padding: 30px 25px;
+            min-height: 230px;
+            border: 1px solid var(--border);
+            border-radius: 13px;
+            background: linear-gradient(145deg, #15171b, #0d0e11);
+            transition: transform .3s, border-color .3s;
+        }
+
+        .service-card::after {
+            content: "";
+            position: absolute;
+            width: 130px;
+            height: 130px;
+            right: -75px;
+            bottom: -75px;
+            border-radius: 50%;
+            background: rgba(228,196,107,.10);
+            filter: blur(15px);
+            transition: transform .3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(228,196,107,.5);
+        }
+
+        .service-card:hover::after {
+            transform: scale(1.7);
+        }
+
+        .service-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 43px;
+            height: 43px;
+            border: 1px solid rgba(228,196,107,.3);
+            background: rgba(228,196,107,.07);
+            border-radius: 10px;
+            font-size: 21px;
+            margin-bottom: 22px;
+        }
+
+        .service-card h3 {
+            font-size: 17px;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--muted);
+        }
+
+        .service-number {
+            position: absolute;
+            top: 22px;
+            right: 23px;
+            color: #565861;
+            font-size: 11px;
+        }
+
+        /* ABOUT */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 65px;
+            align-items: center;
+        }
+
+        .about-copy p {
+            color: var(--muted);
+            font-size: 14px;
+            margin-top: 15px;
+        }
+
+        .principles {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 13px;
+        }
+
+        .principle {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            padding: 23px 19px;
+            border-radius: 10px;
+        }
+
+        .principle strong {
+            display: block;
+            color: var(--gold);
+            font-size: 14px;
+            margin-bottom: 7px;
+        }
+
+        .principle span {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        /* FEATURED PROJECT */
+
+        .project-section {
+            background:
+                radial-gradient(ellipse at 85% 50%,
+                    rgba(100,75,25,.13), transparent 45%),
+                #0c0d10;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .project-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            padding: 40px;
+            border: 1px solid rgba(228,196,107,.25);
+            border-radius: 17px;
+            background: rgba(255,255,255,.025);
+        }
+
+        .project-visual {
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background:
+                radial-gradient(circle, rgba(228,196,107,.15), transparent 60%),
+                #08090b;
+        }
+
+        .planet {
+            font-size: 85px;
+            filter: drop-shadow(0 0 22px rgba(228,196,107,.25));
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .project-visual span {
+            font-size: 10px;
+            letter-spacing: 4px;
+            color: var(--gold);
+            margin-top: 10px;
+        }
+
+        .project-copy h3 {
+            font-size: clamp(25px, 3vw, 38px);
+            line-height: 1.25;
+            margin-bottom: 15px;
+        }
+
+        .project-copy p {
+            color: var(--muted);
+            font-size: 13px;
+            margin-bottom: 24px;
+        }
+
+        .project-tag {
+            display: inline-block;
+            font-size: 10px;
+            color: var(--gold);
+            padding: 6px 10px;
+            border: 1px solid rgba(228,196,107,.25);
+            border-radius: 100px;
+            margin-bottom: 17px;
+        }
+
+        /* CONTACT */
+
+        .contact-box {
+            text-align: center;
+            padding: 65px 30px;
+            border: 1px solid rgba(228,196,107,.24);
+            border-radius: 17px;
+            background:
+                radial-gradient(ellipse at center,
+                    rgba(228,196,107,.09), transparent 65%),
+                #101114;
+        }
+
+        .contact-box .section-description {
+            margin: 0 auto 28px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 28px 0;
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .footer-inner p {
+            color: #858892;
+            font-size: 11px;
+        }
+
+        .footer-brand {
+            font-size: 14px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .footer-brand span {
+            color: var(--gold);
+        }
+
+        /* ANIMATIONS */
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity .7s ease, transform .7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 850px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 78px;
+                left: 0;
+                right: 0;
+                padding: 23px 6%;
+                background: #0c0d10;
+                border-bottom: 1px solid var(--border);
+                flex-direction: column;
+                align-items: stretch;
+                gap: 18px;
+            }
+
+            nav.open {
+                display: flex;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+
+            .nav-cta {
+                text-align: center;
+            }
+
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .project-card {
+                grid-template-columns: 1fr;
+                padding: 22px;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .container {
+                width: 90%;
+            }
+
+            .logo {
+                font-size: 17px;
+            }
+
+            .hero {
+                min-height: 650px;
+            }
+
+            .hero-content {
+                padding: 80px 0;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .hero-description {
+                font-size: 14px;
+            }
+
+            section.content-section {
+                padding: 75px 0;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .principles {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .principle {
+                padding: 16px 12px;
+            }
+
+            .contact-box {
+                padding: 45px 18px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                scroll-behavior: auto !important;
+                animation: none !important;
+                transition: none !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+        .learn-more {
+    margin-top: 20px;
+    padding: 10px 16px;
+    background: transparent;
+    border: 1px solid #e4c46b;
+    border-radius: 6px;
+    color: #e4c46b;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.learn-more:hover {
+    background: #e4c46b;
+    color: #08090b;
+    transform: translateY(-3px);
+}
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container navbar">
+
+            <a href="#home" class="logo">
+                TTSVP <span>INNOVATION</span>
+            </a>
+
+            <button class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false">
+                ☰
+            </button>
+
+            <nav id="navigation">
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#about">About Us</a>
+                <a href="#projects">Our Vision</a>
+                <a href="#contact" class="nav-cta">Let's Talk ↗</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO SECTION -->
+
+        <section class="hero" id="home">
+            <div class="container">
+
+                <div class="hero-content">
+
+                    <div class="eyebrow">
+                        Ideas Meet Innovation
+                    </div>
+
+                    <h1>
+                        We Build What's <br>
+                        <span class="gradient-text">Next.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Turning ambitious ideas into digital experiences.
+                        We create modern websites, mobile applications,
+                        games and digital solutions designed for the future.
+                    </p>
+
+                    <div class="actions">
+                        <a href="#services" class="btn btn-primary">
+                            Explore Our Services ↗
+                        </a>
+
+                        <a href="#projects" class="btn btn-secondary">
+                            Discover Our Vision
+                        </a>
+                    </div>
+
+                    <p class="hero-note">
+                        TECHNOLOGY · CREATIVITY · INNOVATION
+                    </p>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+
+        <section class="content-section services-section" id="services">
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <p class="section-label">What We Do</p>
+
+                    <h2 class="section-title">
+                        Technology with <span class="gradient-text">Purpose.</span>
+                    </h2>
+
+                    <p class="section-description">
+                        Digital services that help transform your ideas
+                        into practical solutions for the modern world.
+                    </p>
+                    <button class="learn-more"
+        onclick="showService('Website Development')">
+    Learn More ↗
+</button>
+                </div>
+
+                <div class="service-grid">
+
+                    <article class="service-card reveal">
+                        <span class="service-number">01</span>
+                        <div class="service-icon">⌘</div>
+                        <h3>Website Development</h3>
+                        <p>
+                            Responsive, modern websites that introduce
+                            your brand and connect you with customers.
+                        </p>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <span class="service-number">02</span>
+                        <div class="service-icon">▣</div>
+                        <h3>Mobile App Development</h3>
+                        <p>
+                            User-focused mobile application concepts
+                            designed around real business needs.
+                        </p>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <span class="service-number">03</span>
+                        <div class="service-icon">✧</div>
+                        <h3>Game Development</h3>
+                        <p>
+                            Creative game concepts and interactive
+                            experiences built with imagination.
+                        </p>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <span class="service-number">04</span>
+                        <div class="service-icon">↗</div>
+                        <h3>Digital Marketing</h3>
+                        <p>
+                            Digital content and marketing strategies
+                            that help businesses build their online presence.
+                        </p>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <span class="service-number">05</span>
+                        <div class="service-icon">⌘</div>
+                        <h3>Custom Software</h3>
+                        <p>
+                            Tailored software concepts for business
+                            workflows, productivity and everyday operations.
+                        </p>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <span class="service-number">06</span>
+                        <div class="service-icon">◎</div>
+                        <h3>Creative Digital Solutions</h3>
+                        <p>
+                            Exploring practical ways to combine design,
+                            technology and fresh ideas.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+
+        <section class="content-section" id="about">
+            <div class="container about-grid">
+
+                <div class="about-copy reveal">
+
+                    <p class="section-label">About Us</p>
+
+                    <h2 class="section-title">
+                        Small beginnings.<br>
+                        <span class="gradient-text">Big ambitions.</span>
+                    </h2>
+
+                    <p>
+                        TTSVP INNOVATION is an emerging technology
+                        initiative focused on building useful digital
+                        experiences through creativity and continuous learning.
+                    </p>
+
+                    <p>
+                        Our vision is to grow from innovative ideas into
+                        meaningful digital products, including our
+                        long-term game concept, REAL LIFE SIMULATOR — KEPLAR 05.
+                    </p>
+
+                </div>
+
+                <div class="principles reveal">
+
+                    <div class="principle">
+                        <strong>Innovation</strong>
+                        <span>Think beyond the ordinary.</span>
+                    </div>
+
+                    <div class="principle">
+                        <strong>Creativity</strong>
+                        <span>Turn imagination into ideas.</span>
+                    </div>
+
+                    <div class="principle">
+                        <strong>Quality</strong>
+                        <span>Build with care and purpose.</span>
+                    </div>
+
+                    <div class="principle">
+                        <strong>Growth</strong>
+                        <span>Learn, improve and evolve.</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED PROJECT -->
+
+        <section class="content-section project-section" id="projects">
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <p class="section-label">Our Vision</p>
+
+                    <h2 class="section-title">
+                        Beyond the <span class="gradient-text">Ordinary.</span>
+                    </h2>
+
+                    <p class="section-description">
+                        Exploring a future where imagination can become
+                        an interactive digital world.
+                    </p>
+                </div>
+
+                <div class="project-card reveal">
+
+                    <div class="project-visual">
+                        <div class="planet">🪐</div>
+                        <span>ENTER THE UNKNOWN</span>
+                    </div>
+
+                    <div class="project-copy">
+
+                        <span class="project-tag">
+                            LONG-TERM GAME CONCEPT
+                        </span>
+
+                        <h3>
+                            REAL LIFE SIMULATOR:<br>
+                            <span class="gradient-text">KEPLAR 05</span>
+                        </h3>
+
+                        <p>
+                            An ambitious game concept imagined as a vast
+                            interactive world, beginning with Tamil Nadu
+                            and expanding towards diverse places, landscapes
+                            and original continents.
+                        </p>
+
+                        <p>
+                            This is a project in development planning.
+                            Its features and release timeline are not yet confirmed.
+                        </p>
+
+                        <a href="#contact" class="btn btn-secondary">
+                            Follow Our Journey ↗
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+
+        <section class="content-section" id="contact">
+            <div class="container">
+
+                <div class="contact-box reveal">
+
+                    <p class="section-label">Start a Conversation</p>
+
+                    <h2 class="section-title">
+                        Have an idea?<br>
+                        <span class="gradient-text">Let's create it.</span>
+                    </h2>
+
+                    <p class="section-description">
+                        Tell us about your website, application,
+                        marketing or software project.
+                    </p>
+
+                    <!-- Replace the number with your WhatsApp number.
+                         Include country code; do not use + or spaces. -->
+
+                    <a
+                        href="https://wa.me/918438578766?text=Hello%20TTSVP%20INNOVATION%2C%20I%20would%20like%20to%20discuss%20a%20project."
+                        class="btn btn-primary"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Contact Us on WhatsApp ↗
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+        <div class="container footer-inner">
+
+            <div class="footer-brand">
+                TTSVP <span>INNOVATION</span>
+            </div>
+
+            <p>
+                © <span id="year">2026</span> TTSVP INNOVATION.
+                All rights reserved.
+            </p>
+
+            <p>Turning Ideas Into Digital Reality.</p>
+
+        </div>
+    </footer>
+
+    <script>
+        // Mobile navigation
+        const menuToggle = document.getElementById("menuToggle");
+        const navigation = document.getElementById("navigation");
+
+        menuToggle.addEventListener("click", function () {
+            const isOpen = navigation.classList.toggle("open");
+
+            menuToggle.setAttribute("aria-expanded", isOpen);
+            menuToggle.textContent = isOpen ? "✕" : "☰";
+        });
+
+        // Close mobile navigation after clicking a link
+        navigation.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navigation.classList.remove("open");
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.textContent = "☰";
+            });
+        });
+
+        // Reveal animations
+        const revealElements = document.querySelectorAll(".reveal");
+
+        if ("IntersectionObserver" in window) {
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.12
+            });
+
+            revealElements.forEach(function (element) {
+                observer.observe(element);
+            });
+        } else {
+            revealElements.forEach(function (element) {
+                element.classList.add("visible");
+            });
+        }
+
+        // Automatic copyright year
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>
+```
